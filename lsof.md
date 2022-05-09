@@ -1,3 +1,25 @@
+# lsof output description
+**FD – stands for a File descriptor and may see some of the values as:**
+
+- cwd current working directory
+- rtd root directory
+- txt program text (code and data)
+- mem memory-mapped file
+
+**Also in FD column numbers like 1u is actual file descriptor and followed by u,r,w of its mode as:**
+
+- r for read access.
+- w for write access.
+- u for read and write access.
+
+**TYPE – of files and it’s identification.**
+
+- DIR – Directory
+- REG – Regular file
+- CHR – Character special file.
+- FIFO – First In First Out
+
+
 # Device
 List all open files on device
 ```
@@ -135,4 +157,5 @@ sudo lsof -i udp
 ```
 lsof -r5"m==== %T ===="
 ```
+
 
