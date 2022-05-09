@@ -119,5 +119,20 @@ sudo lsof -i@usscz2-vip-bx-010.aaplimg.com
 lsof -i@128.210.15.17
 ```
 
+### List all TCP connections
+```
+sudo lsof -i tcp
+```
 
+### List all UDP connections
+```
+sudo lsof -i udp
+```
+
+# Monitoring File Activity 
+
+### Show open files every 5 seconds with timestamp header
+```
+lsof -r5"m==== %T ===="
+```
 
