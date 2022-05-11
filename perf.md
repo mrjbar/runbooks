@@ -2,6 +2,13 @@
 https://github.com/brendangregg/perf-tools
 https://brendangregg.com/perf.html
 
+- **perf stat**: obtain event counts
+- **perf record**: record events for later reporting
+- **perf report**: break down events by process, function, etc.
+- **perf annotate**: annotate assembly or source code with event counts
+- **perf top**: see live event count
+- **perf bench**: run different kernel microbenchmarks
+
 ### Listing all currently known events
 ```
 sudo perf list
