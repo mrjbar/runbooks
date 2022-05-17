@@ -390,9 +390,9 @@ oci limits service list -c $OCID
 }
 ```
 
-## List Compute Limits great than 1
+## List Available Compute Limits
 ```
-➜ oci limits value list --service-name compute -c $OCID --all | jq '.data[]|select(.value >= 1)'  
+➜ oci limits value list --service-name compute -c $OCID --all | jq '.data[]|select(.value > 0)'  
 {
   "availability-domain": "EBKv:PHX-AD-1",
   "name": "standard-a1-core-count",
@@ -456,3 +456,19 @@ oci limits service list -c $OCID
 ```
 
 
+## list Available Load Lalancer Limits
+```
+➜  oci limits value list --service-name load-balancer -c $OCID --all | jq '.data[]|select(.value > 0)' 
+{
+  "availability-domain": null,
+  "name": "lb-flexible-bandwidth-sum",
+  "scope-type": "REGION",
+  "value": 10
+}
+{
+  "availability-domain": null,
+  "name": "lb-flexible-count",
+  "scope-type": "REGION",
+  "value": 1
+}
+```
