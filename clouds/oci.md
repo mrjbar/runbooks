@@ -71,11 +71,13 @@ for s in $SERVICE_NAME; do echo -e "\n$s"; oci limits value list --service-name 
 ```
 PROFILE=""
 REGION=""
-oci limits service list -c $OCID --query 'data[?name == `load-balancer`]'
-{
-  "description": "LbaaS",
-  "name": "load-balancer"
-}
+oci limits service list -c $OCID --output table  --query 'data[?name == `load-balancer`]'
++-------------+---------------+
+| description | name          |
++-------------+---------------+
+| LbaaS       | load-balancer |
++-------------+---------------+
+
 ```
 
 ## Load Balancers
