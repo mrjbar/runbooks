@@ -71,7 +71,7 @@ for s in $SERVICE_NAME; do echo -e "\n$s"; oci limits value list --service-name 
 ```
 PROFILE=""
 REGION=""
-oci limits service list -c $COMPARTMENT | jq '.data[] | select(.name == "load-balancer")'
+oci limits service list -c $OCID --query 'data[?name == `load-balancer`]'
 {
   "description": "LbaaS",
   "name": "load-balancer"
