@@ -25,6 +25,7 @@
 - [ ] \$! - PID of most recently started background command 
 - [ ] eval string - Perform substitution operations on string and then execute.
 - [ ] exit n - Exist scrupt with stats n (0 means success)
+- [ ] set -- one two three - Sets command line arguments \$1=one, \$2=two \$3=three
 
 ### Get length of a space deliminated string
 ```
@@ -90,3 +91,7 @@ printf "%s %d" $string $integer
 
 ## Functions
 
+Create the watch command
+```
+ watch() { while true; do  eval "$*"; sleep 1; done }
+```
