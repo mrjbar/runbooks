@@ -2,6 +2,30 @@
 
 ## Arguments and Variables
 
+- [ ] \$@ - All command arguments: list of seperate items
+- [ ] \$* - All command arguments: a single item
+- [ ] \$# - Number of command arguments
+- [ ] \$0 - Script name
+- [ ] \${nn} - General format for argument nn
+- [ ] \$var - value of  varuable var
+- [ ] \${var} - general format
+- [ ] \${var:p:n} - Substring of n character of var beginning at p 
+- [ ] \${var-val2} - Return **val2** if var is undefined
+- [ ] \${var+val2} - Return **val2** if var is defined
+- [ ] \${var=val2} - Return **val2** if **var** is undefined and set 
+- [ ] **var**=**val2** 
+- [ ] \${var?errmsg} - Display "var: errmsg" if var is undefined
+- [ ] arr( items ) - Dfined arr as an array
+- [ ] echo ${arr[0]} - Print first element of the array
+- [ ] echo ${#arr[@]}  - Print length of array
+## General Contructs
+- [ ] \` cmd\` - Substitute output of cmd
+- [ ] \$(cmd) - Substitute output of cmd 
+- [ ] \$? - Exit status of most recent command 
+- [ ] \$! - PID of most recently started background command 
+- [ ] eval string - Perform substitution operations on string and then execute.
+- [ ] exit n - Exist scrupt with stats n (0 means success)
+
 ### Get length of a space deliminated string
 ```
 length = echo $var | wc -w
@@ -17,6 +41,12 @@ echo
 # https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
 
 ## General Contructs
+- [ ] \` cmd\` - Substitute output of cmd
+- [ ] \$(cmd) - Substitute output of cmd 
+- [ ] \$? - Exit status of most recent command 
+- [ ] \$! - PID of most recently started background command 
+- [ ] eval string - Perform substitution operations on string and then execute.
+- [ ] exit n - Exist scrupt with stats n (0 means success)
 
 ## Arithmetic
 
