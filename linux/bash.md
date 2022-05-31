@@ -95,3 +95,8 @@ Create the watch command
 ```
  watch() { while true; do  eval "$*"; sleep 1; done }
 ```
+
+Watch the rss(resident set size) grow or shrink. RSS shows main memory usage which includes shared libaries 
+```
+watch ps -o rss,command -p 37703
+```
