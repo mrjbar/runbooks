@@ -21,3 +21,6 @@
 
 # Decrement a list of digits
 `g + ctrl + x`
+
+# Find Replace
+`:s/\(\w*\)/sometext = \1/`
