@@ -7,6 +7,8 @@ oci network local-peering-gateway list --output table --query 'data[*].{ "displa
 oci network subnet list --output table --query 'data[*].{ "display-name ": "display-name ", "id ": "id ", "cidr-block ": "cidr-block "}' --compartment-id "
 oci network nat-gateway list --output table --query 'data[*].{ "display-name ": "display-name ", "id ": "id ", "vcn-id ": "vcn-id ", "lifecycle-state ": "lifecycle-state "}'  --compartment-id "
 oci network service-gateway list --output table --query 'data[*].{ "display-name ": "display-name ", "id ": "id ", "vcn-id ": "vcn-id ", "lifecycle-state ": "lifecycle-state "}'  --compartment-id "
+oci network security-list list --output table --query 'data[*].{ "display-name ": "display-name ", "id ": "id ", "lifecycle-state ": "lifecycle-state "}'  --compartment-id 
+oci network route-table list --output table --query 'data[*].{ "display-name ": "display-name ", "id ": "id ", "lifecycle-state ": "lifecycle-state "}'  --compartment-id 
 oci os bucket list --output table --query 'data[*].{namespace: "namespace ", "bucket-name ": "name "}' -c "
 oci os object list -bn $bn -ns $ns --output table"
 oci os object get -ns $ns -bn $bn --name $file_name --file output.ext"
@@ -30,3 +32,5 @@ oci lb load-balancer-health list --output table --compartment-id "
 oci dns record domain get --zone-name-or-id $zone --domain $domain --region "
 oci dns record rrset update --zone-name-or-id $zone --domain $domain --rtype  "A " --items '[{ "domain ": "${domain} ", "rtype ": "A ", "rdata ": "x.x.x.x ", "ttl ":900}]' --region "
 oci dns record rrset update --zone-name-or-id $zone --domain $domain --rtype  "CNAME " --items '[{ "domain ": "${domain} ", "rtype ": "CNAME ", "rdata ": "x.x.x.x ", "ttl ":900}]' --region "
+oci dns resolver list --output table --query 'data[*].{"display-name":"display-name","id":"id","lifecycle-state":"lifecycle-state"}' --compartment-id
+oci dns resolver-endpoint list --output table --query 'data[*].{"name":'name","listening-address":"listening-address","is-fowarding":"is-fowarding","is-listening":"is-listening","forwarding-address":"forwarding-address","lifecycle-state":"lifecycle-state"}' --resolver-id
