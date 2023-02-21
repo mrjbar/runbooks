@@ -13,6 +13,8 @@ oci os bucket list --output table --query 'data[*].{namespace: "namespace ", "bu
 oci os object list -bn $bn -ns $ns --output table"
 oci os object get -ns $ns -bn $bn --name $file_name --file output.ext"
 oci iam region list --output table"
+START_TIME=$(date -v '-1d' '+%Y-%m-%dT%H:%M:%S%z')
+END_TIME=$(date +%Y-%m-%dT%H:%M:%S%z)
 oci audit event list --end-time $END_TIME --start-time $START_TIME --output table --query 'data[*].{eventTime: "event-time ",eventType: "event-type ",source: "source ",user: "user "}' -c "
 oci work-requests work-request get --work-request-id "
 oci ce cluster list --output table --query 'data[*].{name: "name ",id: "id "}' -c "
